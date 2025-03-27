@@ -55,11 +55,15 @@ public class Application {
 	}
 
 	static List<String> addNewlineAfterEachPeriod(List<String> lines) {
-		List<String> modifiedLines = new ArrayList<>();
-		for (String line : lines) {
-			modifiedLines.add(line.replace(".", ".\n"));
-		}
-		return modifiedLines;
+	    List<String> modifiedLines = new ArrayList<>();
+	    String allText = String.join(" ", lines);
+	    String[] sentences = allText.split("\\.");
+	    for (String sentence : sentences) {
+	        if (!sentence.trim().isEmpty()) {
+	            modifiedLines.add(sentence.trim() + ".");
+	        }
+	    }
+	    return modifiedLines;
 	}
 
 	static void writeSmallTextFile(List<String> lines, String fileName) throws IOException {
