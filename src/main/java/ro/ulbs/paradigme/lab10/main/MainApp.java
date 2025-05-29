@@ -15,10 +15,9 @@ public class MainApp {
         String strategyType = scanner.next();
         scanner.close();
 
-        // Obține instanța singleton a DataRepository
+
         DataRepository dataRepository = DataRepository.getInstance();
 
-        // Obține strategia și instanțiază DataAggregator
         DataAggregator aggregator = new DataAggregator(Utils.getStrategy(strategyType));
 
         long baseTimestamp = System.currentTimeMillis();

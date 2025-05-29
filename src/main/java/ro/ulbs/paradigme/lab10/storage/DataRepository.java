@@ -11,12 +11,10 @@ public class DataRepository {
     private static DataRepository instance;
     private final List<SensorData> records;
 
-    // Private constructor to prevent instantiation
     public DataRepository() {
         records = new ArrayList<>();
     }
 
-    // Public method to get the single instance
     public static DataRepository getInstance() {
         if (instance == null) {
             synchronized (DataRepository.class) {
